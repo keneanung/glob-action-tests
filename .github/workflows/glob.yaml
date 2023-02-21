@@ -13,7 +13,6 @@ jobs:
         id: glob
         with:
           files: files/file.txt
-          match-gitignore-files: true
       
       - name: Show all matching files
         run: |
