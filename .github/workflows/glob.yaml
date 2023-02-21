@@ -1,0 +1,18 @@
+name: Glob
+
+on: push
+
+jobs:
+  glob:
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Glob match
+        uses: tj-actions/glob@v16
+        id: glob
+        with:
+          files: files/file.txt
+      
+      - name: Show all matching files
+        run: |
+          echo "${{ steps.glob.outputs.paths }}"
